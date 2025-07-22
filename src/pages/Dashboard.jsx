@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ProductButton from '../components/ProductButton'
 import Receipt from '../components/Receipt'
 
-export default function Dashboard({ productos, onAgregar }) {
+export default function Dashboard({ productos, onAgregar, setProductos }) {
   const [seleccionados, setSeleccionados] = useState([])
   const [mostrarBoleta, setMostrarBoleta] = useState(false)
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todas')
@@ -15,10 +15,23 @@ export default function Dashboard({ productos, onAgregar }) {
     setSeleccionados([])
   }
 
+  const handleEliminarProducto = (id) => {
+    const confirmacion = confirm('¿Estás seguro de eliminar este producto?')
+    if (!confirmacion) return
+    const nuevos = productos.filter(p => p.id !== id)
+    setProductos(nuevos)
+    localStorage.setItem('productos', JSON.stringify(nuevos))
+  }
+
   const productosFiltrados =
     categoriaSeleccionada === 'todas'
       ? productos
       : productos.filter((p) => p.categoria === categoriaSeleccionada)
+
+  const categoriasUnicas = [
+    'todas',
+    ...Array.from(new Set(productos.map((p) => p.categoria)))
+  ]
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 px-4">
@@ -33,21 +46,11 @@ export default function Dashboard({ productos, onAgregar }) {
             onChange={(e) => setCategoriaSeleccionada(e.target.value)}
             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
           >
-        <option value="todas">todas</option>
-        <option value="gaseosa">Gaseosa</option>
-          <option value="dulce">limpieza</option>
-          <option value="embutido">Embutidos</option>
-          <option value="Cervesas">Cervesas</option>
-          <option value="Verduras">Verduras</option>
-          <option value="Abarrotes">Abarrotes</option>
-          <option value="Licores">Licores</option>
-          <option value="aseo">aseo</option>
-          <option value="Frutas">Frutas</option>
-          <option value="Menestras">Menestras</option>
-          <option value="Fideos">Fideos</option>
-          <option value="helados">helados</option>
-          <option value="Cigarros">Cigarros</option>
-          <option value="Confites">Confites</option>
+            {categoriasUnicas.map((cat, index) => (
+              <option key={index} value={cat}>
+                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -62,6 +65,7 @@ export default function Dashboard({ productos, onAgregar }) {
                   key={producto.id}
                   producto={producto}
                   onClick={agregarAVenta}
+                  onEliminar={handleEliminarProducto}
                 />
               ))}
             </div>
