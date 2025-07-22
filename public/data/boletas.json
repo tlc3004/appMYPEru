@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "cliente": "Juan Pérez",
+        "productos":[
+            {"nombre":"coca-cola 1/2 lt.", "precio": 3.00, "cantidad": 2},
+            {"nombre": "papas lays", "precio": 2.00, "cantidad": 2}
+        ]
+    },
+    {
+        "id": "2",
+        "cliente": "Carlos Sotil",
+        "productos":[
+            {"nombre":"Pan de Molde", "precio": 9.00, "cantidad": 2},
+            {"nombre": "galletas oreo", "precio": 3.00, "cantidad": 4}
+        ]
+    },
+    {
+        "id": "3",
+        "cliente": "mirian gonzales",
+        "productos":[
+            {"nombre":"inca-cola 2lt.", "precio": 8.00, "cantidad": 1},
+            {"nombre": "papitas pringl´s", "precio": 13.00, "cantidad": 2}
+        ]
+    },
+    {
+        "id": "4",
+        "cliente": "Juan lopez",
+        "productos":[
+            {"nombre":"cervesa pilsen lata", "precio": 5.00, "cantidad": 2},
+            {"nombre": "cigarros lucky", "precio": 20.00, "cantidad": 2}
+        ]
+    },
+    {
+        "id": "5",
+        "cliente": "rodrigo pacheco",
+        "productos":[
+            {"nombre":"coca-cola 1 lt.", "precio": 10.00, "cantidad": 2},
+            {"nombre": "cabanossi", "precio": 6.00, "cantidad": 2}
+        ]
+    }
+]
