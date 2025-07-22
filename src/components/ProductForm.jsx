@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import '../styles/styles.css'
 
 export default function ProductForm({ onAdd }) {
   const [nombre, setNombre] = useState('')
@@ -41,7 +42,7 @@ export default function ProductForm({ onAdd }) {
   return (
     <div>
       {/* Botón de reinicio de categorías */}
-      <div className="mb-4 text-right">
+      <div className="form mb-4 text-right">
         <button
           onClick={eliminarTodasLasCategorias}
           className="text-sm text-red-600 hover:text-red-800 underline"
@@ -95,7 +96,7 @@ export default function ProductForm({ onAdd }) {
   </div>
 
   {/* BOTÓN SUBMIT */}
-  <div className="text-center">
+  <div className="btn-submit text-center">
     <button
       type="submit"
       className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded shadow"

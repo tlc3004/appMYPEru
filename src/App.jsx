@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ProductForm from './components/ProductForm'
 import Dashboard from './pages/Dashboard'
+import './styles/styles.css'
 
 export default function App() {
   const [productos, setProductos] = useState([])
@@ -23,13 +24,6 @@ export default function App() {
     setProductos([...productos, nuevo])
   }
 
-    const handleEliminarProducto = (id) => {
-    const confirmacion = confirm('¿Estás seguro de eliminar este producto?')
-    if (!confirmacion) return
-    const nuevos = productos.filter(p => p.id !== id)
-    setProductos(nuevos)
-    localStorage.setItem('productos', JSON.stringify(nuevos))
-  }
 return (
   <div className="min-h-screen bg-[url('/img/Interacci%C3%B3n%20digital%20en%20la%20calle.png')] bg-cover bg-center py-4 px-2 md:px-10">
     {!modoVenta ? (
@@ -59,9 +53,9 @@ return (
     ) : (
       <Dashboard
         productos={productos}
+        setProductos={setProductos}
         onAgregar={() => setModoVenta(false)}
-        onClose={() => setModoVenta(false)}
-         onEliminar={handleEliminarProducto}
+      
       />
 
       

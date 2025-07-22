@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ProductButton from '../components/ProductButton'
 import Receipt from '../components/Receipt'
 
-export default function Dashboard({ productos, onAgregar, setProductos }) {
+export default function Dashboard({ productos, onAgregar, setProductos, onClosed }) {
   const [seleccionados, setSeleccionados] = useState([])
   const [mostrarBoleta, setMostrarBoleta] = useState(false)
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todas')
