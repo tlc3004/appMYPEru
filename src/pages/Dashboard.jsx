@@ -28,7 +28,11 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
       ? productos
       : productos.filter((p) => p.categoria === categoriaSeleccionada)
 
-  const categoriasUnicas = ['todas', ...new Set(productos.map(p => p.categoria))]
+      
+const categoriasJSON = imagenes.map(img => img.categoria)
+const categoriasLocales = productos.map(p => p.categoria)
+const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasLocales])]
+
   
 
     useEffect(() => {

@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import '../styles/styles.css'
 
-export default function ProductForm({ onAdd }) {
+export default function ProductForm({ onAdd, sugerencias = [] }) {
   const [nombre, setNombre] = useState('')
   const [precio, setPrecio] = useState('')
   const [categoria, setCategoria] = useState('')
   const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
+const categoriasMostradas = [...new Set([...sugerencias, ...categoriasGuardadas])]
+
+
 
   useEffect(() => {
     const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
@@ -63,11 +66,11 @@ export default function ProductForm({ onAdd }) {
       onChange={(e) => setCategoria(e.target.value)}
       placeholder="Ej: Embutidos ..."
     />
-    <datalist id="categorias">
-      {categoriasGuardadas.map((cat, i) => (
-        <option key={i} value={cat} />
-      ))}
-    </datalist>
+   <datalist id="categorias">
+  {categoriasMostradas.map((cat, i) => (
+    <option key={i} value={cat} />
+  ))}
+</datalist>
   </div>
 
   {/* INPUT NOMBRE */}

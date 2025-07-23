@@ -13,6 +13,18 @@ export default function App() {
     setProductos(guardados)
   }, [])
 
+  const [categoriasBase, setCategoriasBase] = useState([])
+
+useEffect(() => {
+  fetch('/data/imagenes.json')
+    .then(res => res.json())
+    .then(data => {
+      const categorias = data.map(item => item.categoria)
+      setCategoriasBase(categorias)
+    })
+    .catch(err => console.error('Error cargando categorías base:', err))
+}, [])
+
   // Guardar productos cada vez que cambian
   useEffect(() => {
     localStorage.setItem('productos', JSON.stringify(productos))
@@ -38,7 +50,7 @@ return (
         </header>
 
         <h2 className="text-2xl font-semibold mb-4 text-indigo-800">Añadir a mi inventario</h2>
-        <ProductForm onAdd={agregarProducto} />
+        <ProductForm onAdd={agregarProducto} sugerencias={categoriasBase} />
 <div className="mt-6 flex justify-center">
   <button
     className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md shadow"
