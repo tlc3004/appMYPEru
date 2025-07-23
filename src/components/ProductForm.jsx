@@ -61,7 +61,7 @@ export default function ProductForm({ onAdd }) {
       className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-500 focus:outline-none"
       value={categoria}
       onChange={(e) => setCategoria(e.target.value)}
-      placeholder="Ej: Gaseosa, Aseo..."
+      placeholder="Ej: Embutidos ..."
     />
     <datalist id="categorias">
       {categoriasGuardadas.map((cat, i) => (
@@ -78,7 +78,7 @@ export default function ProductForm({ onAdd }) {
       className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-500 focus:outline-none"
       value={nombre}
       onChange={(e) => setNombre(e.target.value)}
-      placeholder="Ej: Coca Cola"
+      placeholder="Ej: Chorizos (pqt ó und)..."
     />
   </div>
 
@@ -91,7 +91,7 @@ export default function ProductForm({ onAdd }) {
       className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-500 focus:outline-none"
       value={precio}
       onChange={(e) => setPrecio(e.target.value)}
-      placeholder="Ej: 3.50"
+      placeholder="Ej: 3.50 ... 12.00"
     />
   </div>
 
