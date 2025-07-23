@@ -1,41 +1,52 @@
-export default function Receipt({ venta, onClear }) {
-  const total = venta.reduce((acc, p) => acc + p.precio, 0)
+export default function Receipt({ venta, onClear, onClose }) {
+  const total = venta.reduce((acc, p) => acc + p.precio, 0);
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 w-full max-w-xs mx-auto transition-all duration-300 ease-in-out">
-      <h2 className="text-lg font-bold mb-3 text-indigo-800 text-center">🧾 Boleta actual</h2>
-
-      {venta.length === 0 ? (
-        <p className="text-gray-500 text-sm text-center">Aún no hay productos seleccionados</p>
-      ) : (
-        <ul className="divide-y divide-gray-200 max-h-56 overflow-y-auto mb-3">
-          {venta.map((p, i) => (
-            <li
-              key={i}
-              className="flex justify-between items-center py-2 text-sm text-gray-700 hover:bg-gray-100 px-2 rounded transition"
-            >
-              <span>{p.nombre}</span>
-              <span className="font-semibold text-gray-900">S/. {p.precio.toFixed(2)}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* Total */}
-      <div className="mt-3 border-t pt-2 flex justify-between text-base font-bold text-gray-800">
-        <span>Total:</span>
-        <span>S/. {total.toFixed(2)}</span>
+    <aside className="fixed right-0 top-0 h-full w-72 bg-white shadow-lg border-l z-50 flex flex-col transition-transform duration-300">
+      {/* Header */}
+      <div className="p-4 flex justify-between items-center border-b">
+        <h2 className="text-lg font-bold text-indigo-700">🧾 Boleta</h2>
+        <button
+          onClick={onClose}
+          className="text-gray-500 hover:text-red-600 text-xl font-bold"
+        >
+          ×
+        </button>
       </div>
 
-      {/* Botón limpiar boleta */}
-      {venta.length > 0 && (
-        <button
-          className="mt-4 w-full bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-2 px-4 rounded shadow-sm transition duration-300 ease-in-out"
-          onClick={onClear}
-        >
-          Limpiar Boleta
-        </button>
-      )}
-    </div>
-  )
+      {/* Lista productos */}
+      <div className="flex-1 overflow-y-auto p-4">
+        {venta.length === 0 ? (
+          <p className="text-gray-500 text-sm text-center">
+            Aún no hay productos seleccionados
+          </p>
+        ) : (
+          <ul className="divide-y divide-gray-200 text-sm">
+            {venta.map((p, i) => (
+              <li key={i} className="flex justify-between py-2">
+                <span>{p.nombre}</span>
+                <span className="font-semibold">S/. {p.precio.toFixed(2)}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* Total y botón */}
+      <div className="p-4 border-t">
+        <div className="flex justify-between font-bold mb-3">
+          <span>Total:</span>
+          <span>S/. {total.toFixed(2)}</span>
+        </div>
+        {venta.length > 0 && (
+          <button
+            onClick={onClear}
+            className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded shadow"
+          >
+            Limpiar Boleta
+          </button>
+        )}
+      </div>
+    </aside>
+  );
 }

@@ -1,3 +1,14 @@
+/* index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Agrega aquí tu media query */
+@media (max-width: 768px) {
+  .boleta-scroll {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
