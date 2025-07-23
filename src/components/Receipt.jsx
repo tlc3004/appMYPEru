@@ -41,7 +41,7 @@ export default function Receipt({ venta, onClear, onClosed }) {
         {venta.length > 0 && (
           <button
             onClick={onClear}
-            className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded shadow"
+            className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded shadow"
           >
             Limpiar Boleta
           </button>

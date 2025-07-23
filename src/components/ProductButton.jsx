@@ -1,17 +1,22 @@
-export default function ProductButton({ producto, onClick, onEliminar }) {
+export default function ProductButton({ producto, onClick, onEliminar, imagen }) {
   return (
-    <div className="relative group">
+    <div className="relative w-full max-w-[130px] mx-auto group">
       <button
-        className="w-full h-20 sm:h-16 bg-indigo-100 rounded shadow hover:bg-indigo-200 flex items-center justify-center text-center p-2"
-        onClick={() => onClick(producto)} // ← Aquí se dispara "Agregar a venta"
+        className="w-full h-24 bg-indigo-100 rounded shadow hover:bg-indigo-200 flex flex-col items-center justify-center p-2"
+        onClick={() => onClick(producto)}
       >
-        <div>
-          <strong className="text-sm">{producto.nombre}</strong>
-        </div>
+        {imagen && (
+          <img
+            src={imagen}
+            alt={producto.categoria}
+            className="w-8 h-8 mb-1 object-contain"
+          />
+        )}
+        <strong className="text-sm text-center">{producto.nombre}</strong>
       </button>
 
       <button
-        className="absolute top-1 right-1 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition"
+        className="absolute top-0 right-0 bg-red-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center opacity-0 m-1  group-hover:opacity-100 transition"
         onClick={(e) => {
           e.stopPropagation()
           onEliminar(producto.id)
