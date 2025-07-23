@@ -8,20 +8,23 @@ export default function ProductForm({ onAdd = [] }) {
 
 
 
-  useEffect(() => {
-    const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
-    setCategoriasGuardadas(guardadas)
-  }, [])
+useEffect(() => {
+  const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
+  // Limpiar duplicados y espacios extra
+  const unicas = [...new Set(guardadas.map(c => c.trim().toLowerCase()))]
+  setCategoriasGuardadas(unicas)
+}, [])
 
-  const guardarCategoria = (nueva) => {
-    if (!nueva) return
-    const yaExiste = categoriasGuardadas.includes(nueva)
-    if (!yaExiste) {
-      const nuevas = [...categoriasGuardadas, nueva]
-      setCategoriasGuardadas(nuevas)
-      localStorage.setItem('categorias', JSON.stringify(nuevas))
-    }
-  }
+const guardarCategoria = (nueva) => {
+  if (!nueva) return
+  const formateada = nueva.trim().toLowerCase()
+  if (categoriasGuardadas.includes(formateada)) return
+
+  const nuevas = [...categoriasGuardadas, formateada]
+  setCategoriasGuardadas(nuevas)
+  localStorage.setItem('categorias', JSON.stringify(nuevas))
+}
+
 
   const eliminarTodasLasCategorias = () => {
     if (window.confirm('¿Deseas borrar todas las categorías guardadas?')) {
