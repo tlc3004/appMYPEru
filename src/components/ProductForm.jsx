@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
-export default function ProductForm({ onAdd, sugerencias = [] }) {
+export default function ProductForm({ onAdd = [] }) {
   const [nombre, setNombre] = useState('')
   const [precio, setPrecio] = useState('')
   const [categoria, setCategoria] = useState('')
   const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
 
-  const categoriasMostradas = [...new Set([...sugerencias, ...categoriasGuardadas])]
+
 
   useEffect(() => {
     const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
@@ -66,7 +66,7 @@ export default function ProductForm({ onAdd, sugerencias = [] }) {
             placeholder="Ej: Carnes, Gaseosas, etc."
           />
           <datalist id="categorias">
-            {categoriasMostradas.map((cat, i) => (
+            {categoriasGuardadas.map((cat, i) => (
               <option key={i} value={cat} />
             ))}
           </datalist>
