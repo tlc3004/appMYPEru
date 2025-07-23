@@ -75,20 +75,15 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
           <Receipt
             venta={seleccionados}
             onClear={limpiarBoleta}
+            onClosed={() => setMostrarBoleta(false)} // ✅ esto permite que Receipt pueda cerrarse
           />
         )}
 
         <button
-          onClick={() => setMostrarBoleta(!mostrarBoleta)}
+          onClick={() => setMostrarBoleta(true)}
           className="bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-1 px-1 rounded shadow-md"
         >
-          {mostrarBoleta ? 'Ocultar Boleta' : 'Ver Boleta'}
-        </button>
-        <button
-          onClick={() => setMostrarBoleta(!mostrarBoleta)}
-          className="bg-red-500 hover:bg-red-600 text-white text-sm py-1 px-1 rounded shadow-md"
-        >
-          {mostrarBoleta ? 'Ocultar Boleta' : ' Cerrar Boleta'}
+      ver boleta
         </button>
 
         <button

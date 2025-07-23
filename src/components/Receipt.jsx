@@ -1,5 +1,5 @@
-export default function Receipt({ venta, onClear, onClose }) {
-  const total = venta.reduce((acc, p) => acc + p.precio, 0);
+export default function Receipt({ venta, onClear, onClosed }) {
+  const total = venta.reduce((acc, p) => acc + p.precio, 0)
 
   return (
     <aside className="fixed right-0 top-0 h-full w-72 bg-white shadow-lg border-l z-50 flex flex-col transition-transform duration-300">
@@ -7,10 +7,10 @@ export default function Receipt({ venta, onClear, onClose }) {
       <div className="p-4 flex justify-between items-center border-b">
         <h2 className="text-lg font-bold text-indigo-700">🧾 Boleta</h2>
         <button
-          onClick={onClose}
-          className="text-gray-500 hover:text-red-600 text-xl font-bold"
+          onClick={onClosed} // ✅ CORRECTO
+          className="bg-red-500 hover:bg-red-600 text-white text-sm py-1 px-2 rounded shadow-md"
         >
-          ×
+          Cerrar
         </button>
       </div>
 
@@ -48,5 +48,5 @@ export default function Receipt({ venta, onClear, onClose }) {
         )}
       </div>
     </aside>
-  );
+  )
 }
