@@ -39,6 +39,7 @@ export default function App() {
   }
 
   return (
+      <div className="overflow-y-scroll max-h-[100vh] scroll-invisible">
     <div className="min-h-screen bg-[url('/img/Interacci%C3%B3n%20digital%20en%20la%20calle.png')] bg-cover bg-center py-4 md:px-1">
       {modoVenta ? (
         <Dashboard
@@ -80,5 +81,6 @@ export default function App() {
         </div>
       )}
     </div>
+      </div>
   )
 }

@@ -61,6 +61,7 @@ const guardarCategoria = (nueva) => {
 
 
   return (
+    
     <div>
       {/* 🔘 Botón de reinicio de categorías */}
       

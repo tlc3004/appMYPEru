@@ -42,6 +42,18 @@ button {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* ==== SCROLL INVISIBLE */
+.scroll-invisible::-webkit-scrollbar {
+  display: none;
+}
+.scroll-invisible {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+
+
 /* ====== 📱 MEDIA QUERIES ====== */
 
 /* 📱 sm: desde 640px */

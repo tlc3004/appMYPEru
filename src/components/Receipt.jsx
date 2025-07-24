@@ -15,7 +15,7 @@ export default function Receipt({ venta, onClear, onClosed }) {
       </div>
 
       {/* Lista productos */}
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-scroll max-h-[100vh] scroll-invisible p-4">
         {venta.length === 0 ? (
           <p className="text-gray-500 text-sm text-center">
             Aún no hay productos seleccionados
