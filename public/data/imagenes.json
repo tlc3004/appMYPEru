@@ -2,22 +2,22 @@
     {
     "id": 1,
     "categoria": "carnes",
-    "imagen": "/img/carne.png"
+    "imagen": "/img/carnes.png"
     },
     {
     "id": 2,
     "categoria": "cervezas",
-    "imagen": "/img/cervesa.png"
+    "imagen": "/img/cervezas.png"
     },
     {
     "id": 3,
     "categoria": "gaseosas",
-    "imagen": "/img/coca.png"
+    "imagen": "/img/coca-cola.png"
     },
     {
     "id": 4,
     "categoria": "verduras",
-    "imagen": "/img/verdura.png"
+    "imagen": "/img/verduras.png"
     },
     {
     "id": 5,
@@ -42,7 +42,7 @@
     {
         "id": 9,
         "categoria": "dulces",
-        "imagen": "/img/dulce.png"
+        "imagen": "/img/dulces.png"
     },
     {
         "id": 10,
