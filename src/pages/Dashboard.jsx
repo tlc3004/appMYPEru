@@ -89,7 +89,7 @@ const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasL
 
         {/* Productos */}
         <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-bold text-indigo-700 mb-3">🛒💅🧠💡 TIENDA</h2>
+          <h2 className="text-lg font-bold text-indigo-700 mb-3">🛒TIENDA</h2>
           {productosFiltrados.length === 0 ? (
             <p className="text-gray-500 text-sm">No hay productos disponibles</p>
           ) : (

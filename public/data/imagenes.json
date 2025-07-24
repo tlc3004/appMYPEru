@@ -1,52 +1,74 @@
 [
-    {
-    "id": 1,
-    "categoria": "carnes",
-    "imagen": "/img/carnes.png"
-    },
-    {
-    "id": 2,
-    "categoria": "cervezas",
-    "imagen": "/img/cervezas.png"
-    },
-    {
-    "id": 3,
-    "categoria": "gaseosas",
-    "imagen": "/img/coca-cola.png"
-    },
-    {
-    "id": 4,
-    "categoria": "verduras",
-    "imagen": "/img/verduras.png"
-    },
-    {
-    "id": 5,
-    "categoria": "postres",
-    "imagen": "/img/torta.png"
-    },
-    {
-    "id": 6,
-    "categoria": "aseo",
-    "imagen": "/img/perfume.png"
-    },
-    {
-    "id": 7,
-    "categoria": "pollo",
-    "imagen": "/img/pollo.png"
-    },
-    {
-    "id": 8,
-    "categoria": "frutas",
-    "imagen": "/img/frutas.png"
-    },
-    {
-        "id": 9,
-        "categoria": "dulces",
-        "imagen": "/img/dulces.png"
-    },
-    {
-        "id": 10,
-        "categoria": "bebidas",
-        "imagen": "/img/bebidas.png"
-    }
+  { "categoria": "comida", "imagen": "🍽️" },
+  { "categoria": "croissant", "imagen": "🥐" },
+  { "categoria": "pan", "imagen": "🥖" },
+  { "categoria": "queso", "imagen": "🧀" },
+  { "categoria": "pizza", "imagen": "🍕" },
+  { "categoria": "hamburguesa", "imagen": "🍔" },
+  { "categoria": "papas fritas", "imagen": "🍟" },
+  { "categoria": "hot dog", "imagen": "🌭" },
+  { "categoria": "taco", "imagen": "🌮" },
+  { "categoria": "sándwich", "imagen": "🥪" },
+  { "categoria": "pollo frito", "imagen": "🍗" },
+  { "categoria": "costilla", "imagen": "🍖" },
+  { "categoria": "carne", "imagen": "🥩" },
+  { "categoria": "huevo frito", "imagen": "🍳" },
+  { "categoria": "ensalada", "imagen": "🥗" },
+  { "categoria": "ramen", "imagen": "🍜" },
+  { "categoria": "pasta", "imagen": "🍝" },
+  { "categoria": "paella", "imagen": "🥘" },
+  { "categoria": "estofado", "imagen": "🍲" },
+  { "categoria": "cereal", "imagen": "🥣" },
+  { "categoria": "arroz", "imagen": "🍚" },
+  { "categoria": "curry", "imagen": "🍛" },
+  { "categoria": "onigiri", "imagen": "🍙" },
+  { "categoria": "sushi", "imagen": "🍣" },
+  { "categoria": "camarones", "imagen": "🍤" },
+  { "categoria": "dumplings", "imagen": "🥟" },
+  { "categoria": "galleta china", "imagen": "🥠" },
+  { "categoria": "brocheta", "imagen": "🍢" },
+  { "categoria": "narutomaki", "imagen": "🍥" },
+  { "categoria": "pastel", "imagen": "🍰" },
+  { "categoria": "cupcake", "imagen": "🧁" },
+  { "categoria": "donut", "imagen": "🍩" },
+  { "categoria": "galleta", "imagen": "🍪" },
+  { "categoria": "chocolate", "imagen": "🍫" },
+  { "categoria": "caramelo", "imagen": "🍬" },
+  { "categoria": "paleta", "imagen": "🍭" },
+  { "categoria": "flan", "imagen": "🍮" },
+  { "categoria": "helado", "imagen": "🍨" },
+  { "categoria": "raspadilla", "imagen": "🍧" },
+  { "categoria": "cono de helado", "imagen": "🍦" },
+  { "categoria": "jugo", "imagen": "🧃" },
+  { "categoria": "refresco", "imagen": "🥤" },
+  { "categoria": "bubble tea", "imagen": "🧋" },
+  { "categoria": "café", "imagen": "☕" },
+  { "categoria": "té", "imagen": "🍵" },
+  { "categoria": "leche", "imagen": "🥛" },
+  { "categoria": "cerveza", "imagen": "🍺" },
+  { "categoria": "brindis", "imagen": "🍻" },
+  { "categoria": "vino", "imagen": "🍷" },
+  { "categoria": "copas", "imagen": "🥂" },
+  { "categoria": "whisky", "imagen": "🥃" },
+  { "categoria": "mate", "imagen": "🧉" },
+  { "categoria": "biberón", "imagen": "🍼" },
+  { "categoria": "manzana", "imagen": "🍎" },
+  { "categoria": "naranja", "imagen": "🍊" },
+  { "categoria": "limón", "imagen": "🍋" },
+  { "categoria": "plátano", "imagen": "🍌" },
+  { "categoria": "sandía", "imagen": "🍉" },
+  { "categoria": "uvas", "imagen": "🍇" },
+  { "categoria": "fresa", "imagen": "🍓" },
+  { "categoria": "mango", "imagen": "🥭" },
+  { "categoria": "piña", "imagen": "🍍" },
+  { "categoria": "coco", "imagen": "🥥" },
+  { "categoria": "kiwi", "imagen": "🥝" },
+  { "categoria": "palta", "imagen": "🥑" },
+  { "categoria": "brócoli", "imagen": "🥦" },
+  { "categoria": "choclo", "imagen": "🌽" },
+  { "categoria": "zanahoria", "imagen": "🥕" },
+  { "categoria": "ajo", "imagen": "🧄" },
+  { "categoria": "cebolla", "imagen": "🧅" },
+  { "categoria": "tomate", "imagen": "🍅" },
+  { "categoria": "papa", "imagen": "🥔" }
 ]
