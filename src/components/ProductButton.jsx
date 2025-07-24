@@ -5,13 +5,12 @@ export default function ProductButton({ producto, onClick, onEliminar, imagen })
         className="w-full h-24 bg-indigo-100 rounded shadow hover:bg-indigo-200 flex flex-col items-center justify-center p-2"
         onClick={() => onClick(producto)}
       >
-        {imagen && (
-          <img
-            src={imagen}
-            alt={producto.categoria}
-            className="w-8 h-8 mb-1 object-contain"
-          />
-        )}
+    {imagen && (
+  <div className="text-3xl mb-1">
+    {imagen}
+  </div>
+)}
+
         <strong className="text-sm text-center">{producto.nombre}</strong>
       </button>
 
