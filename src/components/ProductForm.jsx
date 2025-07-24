@@ -78,14 +78,14 @@ const guardarCategoria = (nueva) => {
 
         {/* CATEGORÍA - con datalist */}
         <div className='overflow-y-auto scroll-invisible z-30'>
-          <label className="block text-sm font-medium text-gray-700 ">Categoría</label>
+          <label className="block text-sm font-medium text-gray-100 ">Categoría</label>
           <input
             list="categorias"
             type="text"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
-            className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-500 focus:outline-none "
-            placeholder="Ej: Carnes, Gaseosas, etc."
+            className="w-full mt-1 p-2 border border-gray-100 rounded focus:ring-red-600 focus:outline-none "
+            placeholder="Ej: carnes, gaseosas, etc."
           />
           <datalist id="categorias">
             {categoriasGuardadas.map((cat, i) => (
@@ -102,7 +102,7 @@ const guardarCategoria = (nueva) => {
             className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-500 focus:outline-none"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
-            placeholder="Ej: Chorizo artesanal"
+            placeholder="Ej: chorizo "
           />
         </div>
 

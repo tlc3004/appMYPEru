@@ -53,7 +53,7 @@ export default function App() {
         <div className="max-w-3xl mx-auto bg-white/90 shadow-md rounded-lg p-6">
           <header className="text-center mb-6 bg-white/70 p-4 rounded">
             <h1 className="text-4xl md:text-5xl font-extrabold text-red-700 tracking-tight">
-              APPMYPEru
+              APPMYPErú
             </h1>
             <p className="text-gray-800 mt-2 text-lg">
               Caja registradora para emprendedores peruanos

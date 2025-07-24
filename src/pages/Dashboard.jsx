@@ -127,14 +127,14 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
         <div className="md:w-1/3 flex flex-col gap-4 z-30">
           <button
             onClick={() => setMostrarBoleta(!mostrarBoleta)}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-1 px-1 rounded shadow-md"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-3 px-3 rounded shadow-md"
           >
             {mostrarBoleta ? 'Ocultar Boleta' : 'Ver Boleta'}
           </button>
 
           <button
             onClick={onAgregar}
-            className="bg-gray-800 hover:bg-gray-900 text-white py-1 px-1 rounded shadow"
+            className="bg-gray-800 hover:bg-gray-900 text-white py-3 px-3 rounded shadow"
           >
             ← Agregar un Nuevo Producto
           </button>

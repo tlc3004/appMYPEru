@@ -2,20 +2,20 @@ export default function Receipt({ venta, onClear, onClosed }) {
   const total = venta.reduce((acc, p) => acc + p.precio, 0)
 
   return (
-    <aside className="fixed right-0 top-0 h-full w-72 bg-white shadow-lg border-l z-50 flex flex-col transition-transform duration-300">
+    <aside className="fixed right-0 top-0 h-full w-72 bg-white shadow-lg rounded z-50 flex flex-col transition-transform duration-300">
       {/* Header */}
       <div className="p-4 flex justify-between items-center border-b">
         <h2 className="text-lg font-bold text-indigo-700">🧾 Boleta</h2>
         <button
           onClick={onClosed} // ✅ CORRECTO
-          className="bg-red-500 hover:bg-red-600 text-white text-sm py-1 px-2 rounded shadow-md"
+          className="bg-red-600 hover:bg-red-300 text-white text-sm py-2 px-5 rounded shadow-md"
         >
           Cerrar
         </button>
       </div>
 
       {/* Lista productos */}
-      <div className="flex-1 overflow-y-scroll max-h-[100vh] scroll-invisible p-4">
+      <div className="flex-1 inset-0 overflow-y-scroll max-h-[100vh] scroll-invisible p-4">
         {venta.length === 0 ? (
           <p className="text-gray-500 text-sm text-center">
             Aún no hay productos seleccionados
