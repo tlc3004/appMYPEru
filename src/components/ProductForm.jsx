@@ -77,14 +77,14 @@ const guardarCategoria = (nueva) => {
       <form onSubmit={handleSubmit} className="space-y-4">
 
         {/* CATEGORÍA - con datalist */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Categoría</label>
+        <div className='overflow-y-auto scroll-invisible z-30'>
+          <label className="block text-sm font-medium text-gray-700 ">Categoría</label>
           <input
             list="categorias"
             type="text"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
-            className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-500 focus:outline-none"
+            className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-500 focus:outline-none "
             placeholder="Ej: Carnes, Gaseosas, etc."
           />
           <datalist id="categorias">

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "bebidas",
+    "nombre": "/img/bebidas.png",
+    "decorativo": true
+
+  },
+  {
+    "id": "carnes",
+    "nombre": "/img/carnes.png",
+    "decorativo": true,
+    "pos": "bsolute m-5"
+  },
+  {
+    "id": "gaseosa",
+    "nombre": "/img/coca-cola.png",
+    "decorativo": true
+  },
+  {
+    "id": "dulces",
+    "nombre": "/img/dulces.png",
+    "decorativo": true
+  },
+  {
+    "id": "frutas",
+    "nombre": "/img/frutas.png",
+    "decorativo": true
+  },
+  {
+    "id": "aseo",
+    "nombre": "/img/perfume.png",
+    "decorativo": true
+  },
+  {
+    "id": "pollo",
+    "nombre": "/img/pollo.png",
+    "decorativo": true
+  },
+  {
+    "id": "torta",
+    "nombre": "/img/torta.png",
+    "decorativo": true
+  },
+  {
+    "id": "verduras",
+    "nombre": "/img/verduras.png",
+    "decorativo": true
+  },
+  {
+    "id": "cerveza",
+    "nombre": "/img/cervezas.png",
+    "decorativo": true
+  }
+]
