@@ -50,31 +50,30 @@ const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasL
 
 
   return (
-    <div className="overflow-y-scroll max-h-[100vh] scroll-invisible">
-    <div className="h-screen flex flex-col md:flex-row gap-4 p-4 bg-white/30 backdrop-blur-md rounded-xl shadow-lg overflow-y-hidden">
-      
-      {/* 🔴 Overlay opaco si boleta está visible */}
+  <div className="h-screen overflow-hidden">
+    <div className="h-full flex flex-col md:flex-row gap-4 p-4 bg-white/30 backdrop-blur-md rounded-xl shadow-lg">
+
+      {/* 🔴 Overlay si boleta está visible */}
       {mostrarBoleta && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40 overflow-y-scroll max-h-[100vh] scroll-invisible"
-          onClick={() => setMostrarBoleta(false)} // opcional: cerrar al hacer clic fuera
+          className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40"
+          onClick={() => setMostrarBoleta(false)}
         />
       )}
 
-      {/* 🧾 BOLETA (encima del overlay) */}
+      {/* 🧾 BOLETA */}
       {mostrarBoleta && (
         <Receipt
           venta={seleccionados}
           onClear={limpiarBoleta}
-          onClosed={() => setMostrarBoleta(false)} // ✅ cerrar desde botón interno
+          onClosed={() => setMostrarBoleta(false)}
         />
       )}
 
       {/* 🟢 Panel Izquierdo */}
-      <div className="md:w-2/3 flex flex-col gap-4 overflow-y-scroll max-h-[100vh] scroll-invisible z-10">
-        {/* Filtro */}
-        <div className="bg-white p-4 rounded shadow overflow-y-scroll max-h-[100vh] scroll-invisible">
-          <label className="block font-semibold text-gray-700 mb-2 ">Categorías:</label>
+      <div className="md:w-2/3 flex flex-col gap-4 overflow-y-auto scroll-invisible z-10 pr-1">
+        <div className="bg-white p-4 rounded shadow">
+          <label className="block font-semibold text-gray-700 mb-2">Categorías:</label>
           <select
             value={categoriaSeleccionada}
             onChange={(e) => setCategoriaSeleccionada(e.target.value)}
@@ -88,30 +87,28 @@ const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasL
           </select>
         </div>
 
-        {/* Productos */}
-        <div className="bg-white p-4 rounded shadow overflow-y-scroll max-h-[100vh] scroll-invisible">
-          <h2 className="text-lg font-bold text-indigo-700 mb-3">🛒TIENDA</h2>
+        <div className="bg-white p-4 rounded shadow">
+          <h2 className="text-lg font-bold text-indigo-700 mb-3">🛒 TIENDA</h2>
           {productosFiltrados.length === 0 ? (
             <p className="text-gray-500 text-sm">No hay productos disponibles</p>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 overflow-y-scroll max-h-[100vh] scroll-invisible">
-           {productosFiltrados.map(producto => (
-  <ProductButton
-    key={producto.id}
-    producto={producto}
-    onClick={agregarAVenta}
-    onEliminar={handleEliminarProducto}
-    imagen={obtenerImagen(producto.categoria)} // 👈 Aquí está el pase de imagen
-  />
-))}
-
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {productosFiltrados.map(producto => (
+                <ProductButton
+                  key={producto.id}
+                  producto={producto}
+                  onClick={agregarAVenta}
+                  onEliminar={handleEliminarProducto}
+                  imagen={obtenerImagen(producto.categoria)}
+                />
+              ))}
             </div>
           )}
         </div>
       </div>
 
-      {/* 🔵 Panel Derecho: Botones */}
-      <div className="md:w-1/3 flex flex-col gap-4 z-10 overflow-y-scroll max-h-[100vh] scroll-invisible">
+      {/* 🔵 Panel Derecho */}
+      <div className="md:w-1/3 flex flex-col gap-4 z-10">
         <button
           onClick={() => setMostrarBoleta(!mostrarBoleta)}
           className="bg-yellow-500 hover:bg-yellow-600 text-white text-sm py-1 px-1 rounded shadow-md"
@@ -127,6 +124,6 @@ const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasL
         </button>
       </div>
     </div>
-    </div>
-  )
+  </div>
+)
 }
