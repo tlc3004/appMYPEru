@@ -33,15 +33,32 @@ const guardarCategoria = (nueva) => {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!nombre || !precio || !categoria) return
-    onAdd({ nombre, precio: parseFloat(precio), categoria })
-    guardarCategoria(categoria)
-    setNombre('')
-    setPrecio('')
-    setCategoria('')
+ const handleSubmit = (e) => {
+  e.preventDefault()
+
+  const nombreLimpio = nombre.trim()
+  const categoriaLimpia = categoria.trim().toLowerCase()
+  const precioLimpio = parseFloat(precio)
+
+  if (!nombreLimpio || !precioLimpio || !categoriaLimpia) {
+    alert('Completa todos los campos correctamente')
+    return
   }
+
+  onAdd({
+    nombre: nombreLimpio,
+    precio: precioLimpio,
+    categoria: categoriaLimpia
+  })
+
+  guardarCategoria(categoriaLimpia)
+
+  // ✅ Limpiar inputs de verdad
+  setNombre('')
+  setPrecio('')
+  setCategoria('')
+}
+
 
   return (
     <div>
