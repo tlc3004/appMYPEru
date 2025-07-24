@@ -6,25 +6,22 @@ export default function ProductForm({ onAdd = [] }) {
   const [categoria, setCategoria] = useState('')
   const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
 
+  useEffect(() => {
+    const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
+    // Limpiar duplicados y espacios extra
+    const unicas = [...new Set(guardadas.map(c => c.trim().toLowerCase()))]
+    setCategoriasGuardadas(unicas)
+  }, [])
 
+  const guardarCategoria = (nueva) => {
+    if (!nueva) return
+    const formateada = nueva.trim().toLowerCase()
+    if (categoriasGuardadas.includes(formateada)) return
 
-useEffect(() => {
-  const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
-  // Limpiar duplicados y espacios extra
-  const unicas = [...new Set(guardadas.map(c => c.trim().toLowerCase()))]
-  setCategoriasGuardadas(unicas)
-}, [])
-
-const guardarCategoria = (nueva) => {
-  if (!nueva) return
-  const formateada = nueva.trim().toLowerCase()
-  if (categoriasGuardadas.includes(formateada)) return
-
-  const nuevas = [...categoriasGuardadas, formateada]
-  setCategoriasGuardadas(nuevas)
-  localStorage.setItem('categorias', JSON.stringify(nuevas))
-}
-
+    const nuevas = [...categoriasGuardadas, formateada]
+    setCategoriasGuardadas(nuevas)
+    localStorage.setItem('categorias', JSON.stringify(nuevas))
+  }
 
   const eliminarTodasLasCategorias = () => {
     if (window.confirm('¿Deseas borrar todas las categorías guardadas?')) {
@@ -33,38 +30,35 @@ const guardarCategoria = (nueva) => {
     }
   }
 
- const handleSubmit = (e) => {
-  e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
-  const nombreLimpio = nombre.trim()
-  const categoriaLimpia = categoria.trim().toLowerCase()
-  const precioLimpio = parseFloat(precio)
+    const nombreLimpio = nombre.trim()
+    const categoriaLimpia = categoria.trim().toLowerCase()
+    const precioLimpio = parseFloat(precio)
 
-  if (!nombreLimpio || !precioLimpio || !categoriaLimpia) {
-    alert('Completa todos los campos correctamente')
-    return
+    if (!nombreLimpio || !precioLimpio || !categoriaLimpia) {
+      alert('Completa todos los campos correctamente')
+      return
+    }
+
+    onAdd({
+      nombre: nombreLimpio,
+      precio: precioLimpio,
+      categoria: categoriaLimpia
+    })
+
+    guardarCategoria(categoriaLimpia)
+
+    // ✅ Limpiar inputs de verdad
+    setNombre('')
+    setPrecio('')
+    setCategoria('')
   }
 
-  onAdd({
-    nombre: nombreLimpio,
-    precio: precioLimpio,
-    categoria: categoriaLimpia
-  })
-
-  guardarCategoria(categoriaLimpia)
-
-  // ✅ Limpiar inputs de verdad
-  setNombre('')
-  setPrecio('')
-  setCategoria('')
-}
-
-
   return (
-    
     <div>
       {/* 🔘 Botón de reinicio de categorías */}
-      
       <div className="form mb-4 text-right ">
         <button
           onClick={eliminarTodasLasCategorias}
@@ -78,13 +72,13 @@ const guardarCategoria = (nueva) => {
 
         {/* CATEGORÍA - con datalist */}
         <div className='overflow-y-auto scroll-invisible z-30'>
-          <label className="block text-sm font-medium text-gray-100 ">Categoría</label>
+          <label className="block text-sm font-medium text-gray-300 ">Categoría</label>
           <input
             list="categorias"
             type="text"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
-            className="w-full mt-1 p-2 border border-gray-100 rounded focus:ring-red-600 focus:outline-none "
+            className="w-full mt-1 p-2 border border-gray-300 rounded focus:ring-red-600 focus:outline-none"
             placeholder="Ej: carnes, gaseosas, etc."
           />
           <datalist id="categorias">
