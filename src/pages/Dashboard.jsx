@@ -89,7 +89,7 @@ const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasL
 
         {/* Productos */}
         <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-lg font-bold text-indigo-700 mb-3">🛒 TIENDA</h2>
+          <h2 className="text-lg font-bold text-indigo-700 mb-3">🛒💅🧠💡 TIENDA</h2>
           {productosFiltrados.length === 0 ? (
             <p className="text-gray-500 text-sm">No hay productos disponibles</p>
           ) : (
@@ -122,7 +122,7 @@ const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasL
           onClick={onAgregar}
           className="bg-gray-800 hover:bg-gray-900 text-white py-1 px-1 rounded shadow"
         >
-          ← Volver
+          ← Agregar un Nuevo Producto
         </button>
       </div>
     </div>

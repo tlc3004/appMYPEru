@@ -52,7 +52,7 @@ export default function App() {
         <div className="max-w-3xl mx-auto bg-white/90 shadow-md rounded-lg p-6">
           <header className="text-center mb-6 bg-white/70 p-4 rounded">
             <h1 className="text-4xl md:text-5xl font-extrabold text-red-700 tracking-tight">
-              APP-MYPEru
+              APPMYPEru
             </h1>
             <p className="text-gray-800 mt-2 text-lg">
               Caja registradora para emprendedores peruanos
@@ -65,13 +65,13 @@ export default function App() {
 
           <div className="mt-6 flex justify-between">
             <button
-              className="bg-gray-700 hover:bg-gray-800 text-white font-semibold px-4 py-2 rounded shadow"
+              className="bg-gray-700 hover:bg-gray-900 text-white font-semibold px-4 py-2 rounded shadow"
               onClick={() => setMostrarGuia(true)}
             >
-              ¿Cómo se usa?
+              Modo de Uso 👈
             </button>
             <button
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md shadow"
+              className="bg-green-600 hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-md shadow"
               onClick={() => setModoVenta(true)}
             >
               Ir a Mi Tienda

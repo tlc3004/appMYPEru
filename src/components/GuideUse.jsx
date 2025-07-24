@@ -4,27 +4,32 @@ import '../styles/styles.css'
 const pasos = [
   {
     titulo: '1. Añadir Productos',
-    descripcion: 'Usa el formulario para ingresar productos con nombre, precio y categoría.',
+    descripcion: 'Usa el formulario para ingresar productos(ó usar los predeterminados) con nombre, precio y categoría.',
     emoji: '📝'
   },
   {
-    titulo: '2. Categorías Inteligentes',
-    descripcion: 'Las categorías se guardan automáticamente para reutilizar fácilmente.',
+    titulo: '2. Productos Botones',
+    descripcion: 'Los productos ingresados apareceran como botones que se pueden presionar, cada toque es el valor del producto, añadido a la boleta.',
+    emoji: '💡'
+  },
+  {
+    titulo: '3. Categorías Inteligentes',
+    descripcion: 'Las categorías se guardan automáticamente para reutilizarse y fácilmente se podran borrar.',
     emoji: '🧠'
   },
   {
-    titulo: '3. Ir a la Tienda',
-    descripcion: 'Haz clic en "Ir a Mi Tienda" para activar el modo de venta.',
+    titulo: '4. Ir a la Tienda',
+    descripcion: 'Haz clic en "Ir a Mi Tienda" para activar el modo de venta, donde podra utilizar sus productos por categorias .',
     emoji: '🏪'
   },
   {
-    titulo: '4. Agregar a Boleta',
-    descripcion: 'Toca un producto para agregarlo a la boleta. Puedes ver el total y eliminar productos.',
+    titulo: '5. Agregar a Boleta',
+    descripcion: 'Toca un boton (producto) para agregarlo a la boleta he ir acumulando productos al valor de la venta a realizar.',
     emoji: '🛒'
   },
   {
-    titulo: '5. Ver Boleta',
-    descripcion: 'Haz clic en "Ver Boleta" para ver un resumen de tu venta.',
+    titulo: '6. Ver Boleta',
+    descripcion: 'Haz clic en "Ver Boleta" para ver un resumen de tu venta(la podras eliminar con el boton limpiar boleta).',
     emoji: '📋'
   }
 ]

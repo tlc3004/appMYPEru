@@ -63,7 +63,8 @@ const guardarCategoria = (nueva) => {
   return (
     <div>
       {/* 🔘 Botón de reinicio de categorías */}
-      <div className="form mb-4 text-right">
+      
+      <div className="form mb-4 text-right ">
         <button
           onClick={eliminarTodasLasCategorias}
           className="text-sm text-red-600 hover:text-red-800 underline"
