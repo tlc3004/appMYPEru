@@ -9,7 +9,7 @@ const pasos = [
   },
   {
     titulo: '2. Productos Botones',
-    descripcion: 'Los productos ingresados apareceran como botones que se pueden presionar, cada toque es el valor del producto, añadido a la boleta.',
+    descripcion: 'Los productos ingresados apareceran como botones que se pueden presionar, cada toque es el valor del producto, añadido a la boleta.(se puede eliminar y agregar uno nuevo en su lugar)',
     emoji: '💡'
   },
   {
