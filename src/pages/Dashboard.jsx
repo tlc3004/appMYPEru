@@ -6,8 +6,14 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
   const [seleccionados, setSeleccionados] = useState([])
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todas')
   const [mostrarBoleta, setMostrarBoleta] = useState(false)
-  const [imagenes, setImagenes] = useState([])       // Para productos
-  // const [decorativas, setDecorativas] = useState([]) // Para vinilos de fondo
+  const [imagenes, setImagenes] = useState([])
+
+  const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
+  useEffect(() => {
+    const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
+    const unicas = [...new Set(guardadas.map(c => c.trim().toLowerCase()))]
+    setCategoriasGuardadas(unicas)
+  }, [])
 
   const agregarAVenta = (producto) => {
     setSeleccionados([...seleccionados, producto])
@@ -27,23 +33,12 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
       ? productos
       : productos.filter(p => p.categoria === categoriaSeleccionada)
 
-  const categoriasJSON = imagenes.map(img => img.categoria)
-  const categoriasLocales = productos.map(p => p.categoria)
-  const categoriasUnicas = ['todas', ...new Set([...categoriasJSON, ...categoriasLocales])]
-
   useEffect(() => {
     fetch('/data/imagenes.json')
       .then(res => res.json())
       .then(data => setImagenes(data))
       .catch(err => console.error('Error cargando imagenes:', err))
   }, [])
-
-  // useEffect(() => {
-  //   fetch('/data/image.json')
-  //     .then(res => res.json())
-  //     .then(data => setDecorativas(data))
-  //     .catch(err => console.error('Error cargando vinilos:', err))
-  // }, [])
 
   const obtenerImagen = (categoria) => {
     const encontrada = imagenes.find(img => img.categoria === categoria)
@@ -52,24 +47,7 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
 
   return (
     <div className="relative h-screen overflow-hidden">
-
-      {/* 🎨 Vinilos decorativos entre fondo y contenido */}
-    {/* <div className="relative h-screen overflow-hidden"> */}
-  {/* 🎨 Vinilos de fondo */}
-  {/* {decorativas.map((img, i) => (
-    <img
-      key={i}
-      src={img.nombre}
-      alt={img.id}
-      className={`absolute ${img.pos} ${img.size} ${img.opacidad} pointer-events-none select-none z-10`}
-    />
-  ))} */}
-      {/* </div> */}
-
-      {/* 🧱 Contenido principal con blur */}
       <div className="relative z-2 h-full flex flex-col md:flex-row gap-4 p-4 bg-white/30 backdrop-blur-md rounded-xl shadow-lg">
-
-        {/* 🔴 Overlay si boleta está visible */}
         {mostrarBoleta && (
           <div
             className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-4"
@@ -77,7 +55,6 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
           />
         )}
 
-        {/* 🧾 BOLETA */}
         {mostrarBoleta && (
           <Receipt
             venta={seleccionados}
@@ -86,7 +63,6 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
           />
         )}
 
-        {/* 🟢 Panel izquierdo */}
         <div className="md:w-2/3 flex flex-col gap-4 overflow-y-auto scroll-invisible z-30 pr-1">
           <div className="bg-white p-4 rounded shadow">
             <label className="block font-semibold text-gray-700 mb-2">Categorías:</label>
@@ -95,7 +71,8 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
               onChange={(e) => setCategoriaSeleccionada(e.target.value)}
               className="w-full p-2 border border-gray-500 rounded focus:ring-2 focus:ring-indigo-100 overflow-y-auto scroll-invisible z-30"
             >
-              {categoriasUnicas.map((cat, idx) => (
+              <option value="todas">Todas</option>
+              {categoriasGuardadas.map((cat, idx) => (
                 <option key={idx} value={cat}>
                   {cat.charAt(0).toUpperCase() + cat.slice(1)}
                 </option>
@@ -123,7 +100,6 @@ export default function Dashboard({ productos, onAgregar, setProductos }) {
           </div>
         </div>
 
-        {/* 🔵 Panel derecho */}
         <div className="md:w-1/3 flex flex-col gap-4 z-30">
           <button
             onClick={() => setMostrarBoleta(!mostrarBoleta)}

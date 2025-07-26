@@ -9,6 +9,8 @@ export default function App() {
   const [modoVenta, setModoVenta] = useState(false)
   const [mostrarGuia, setMostrarGuia] = useState(false)
   const [categoriasBase, setCategoriasBase] = useState([])
+  const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
+
 
   // Cargar productos guardados
   useEffect(() => {
@@ -38,6 +40,12 @@ export default function App() {
     setProductos([...productos, nuevo])
   }
 
+  useEffect(() => {
+  const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
+  setCategoriasGuardadas(guardadas)
+}, [])
+
+
   return (
       <div className="overflow-y-scroll max-h-[100vh] scroll-invisible">
     <div className="min-h-screen bg-[url('/img/Interacci%C3%B3n%20digital%20en%20la%20calle.png')] bg-cover bg-center py-4 md:px-1">
@@ -46,6 +54,7 @@ export default function App() {
           productos={productos}
           setProductos={setProductos}
           onAgregar={() => setModoVenta(false)}
+          setCategoriasGuardadas={categoriasGuardadas}
         />
       ) : mostrarGuia ? (
         <GuideUse onVolver={() => setMostrarGuia(false)} />

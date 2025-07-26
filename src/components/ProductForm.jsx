@@ -4,29 +4,30 @@ export default function ProductForm({ onAdd = [] }) {
   const [nombre, setNombre] = useState('')
   const [precio, setPrecio] = useState('')
   const [categoria, setCategoria] = useState('')
-  const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
+  const [categoriasPredeterminadas, setCategoriasPredeterminadas] = useState([])
 
   useEffect(() => {
-    const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
-    // Limpiar duplicados y espacios extra
-    const unicas = [...new Set(guardadas.map(c => c.trim().toLowerCase()))]
-    setCategoriasGuardadas(unicas)
+    fetch('/data/imagenes.json')
+      .then(res => res.json())
+      .then(data => {
+        const predeterminadas = data.map(item => item.categoria.trim().toLowerCase())
+        setCategoriasPredeterminadas(predeterminadas)
+      })
+      .catch(err => console.error('Error al cargar las categorías predeterminadas:', err))
   }, [])
 
-  const guardarCategoria = (nueva) => {
-    if (!nueva) return
-    const formateada = nueva.trim().toLowerCase()
-    if (categoriasGuardadas.includes(formateada)) return
-
-    const nuevas = [...categoriasGuardadas, formateada]
-    setCategoriasGuardadas(nuevas)
-    localStorage.setItem('categorias', JSON.stringify(nuevas))
+  const guardarCategoria = (nuevaCategoria) => {
+    const categoriasExistentes = JSON.parse(localStorage.getItem('categorias')) || []
+    const normalizada = nuevaCategoria.trim().toLowerCase()
+    if (!categoriasExistentes.includes(normalizada)) {
+      const actualizadas = [...categoriasExistentes, normalizada]
+      localStorage.setItem('categorias', JSON.stringify(actualizadas))
+    }
   }
 
   const eliminarTodasLasCategorias = () => {
     if (window.confirm('¿Deseas borrar todas las categorías guardadas?')) {
       localStorage.removeItem('categorias')
-      setCategoriasGuardadas([])
     }
   }
 
@@ -48,9 +49,8 @@ export default function ProductForm({ onAdd = [] }) {
       categoria: categoriaLimpia
     })
 
-    guardarCategoria(categoriaLimpia)
+    guardarCategoria(categoriaLimpia) // <-- Aquí se guarda bien
 
-    // ✅ Limpiar inputs de verdad
     setNombre('')
     setPrecio('')
     setCategoria('')
@@ -58,7 +58,6 @@ export default function ProductForm({ onAdd = [] }) {
 
   return (
     <div>
-      {/* 🔘 Botón de reinicio de categorías */}
       <div className="form mb-4 text-right ">
         <button
           onClick={eliminarTodasLasCategorias}
@@ -70,9 +69,8 @@ export default function ProductForm({ onAdd = [] }) {
 
       <form onSubmit={handleSubmit} className="space-y-4">
 
-        {/* CATEGORÍA - con datalist */}
         <div className='overflow-y-auto scroll-invisible z-30'>
-          <label className="block text-sm font-medium text-gray-300 ">Categoría</label>
+          <label className="block text-sm font-medium text-gray-300">Categoría</label>
           <input
             list="categorias"
             type="text"
@@ -82,13 +80,12 @@ export default function ProductForm({ onAdd = [] }) {
             placeholder="Ej: carnes, gaseosas, etc."
           />
           <datalist id="categorias">
-            {categoriasGuardadas.map((cat, i) => (
+            {categoriasPredeterminadas.map((cat, i) => (
               <option key={i} value={cat} />
             ))}
           </datalist>
         </div>
 
-        {/* NOMBRE */}
         <div>
           <label className="block text-sm font-medium text-gray-700">Nombre del producto</label>
           <input
@@ -100,7 +97,6 @@ export default function ProductForm({ onAdd = [] }) {
           />
         </div>
 
-        {/* PRECIO */}
         <div>
           <label className="block text-sm font-medium text-gray-700">Precio (S/.)</label>
           <input
@@ -113,7 +109,6 @@ export default function ProductForm({ onAdd = [] }) {
           />
         </div>
 
-        {/* BOTÓN SUBMIT */}
         <div className="btn-submit text-center">
           <button
             type="submit"
