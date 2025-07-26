@@ -4,7 +4,7 @@ import '../styles/styles.css'
 const pasos = [
   {
     titulo: '1. Añadir Productos',
-    descripcion: 'Usa el formulario para ingresar productos por categoria , su nombre y el precio.(algunas categorias contiene icono)',
+    descripcion: 'Usa el formulario para ingresar productos por categoria , su nombre y el precio.(algunas categorias contienen iconos)',
     emoji: '📝'
   },
   {
