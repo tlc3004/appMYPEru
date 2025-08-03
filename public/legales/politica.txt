@@ -1,7 +1,7 @@
 📄 DOCUMENTO LEGAL DE PROYECTO  
 LUX-JT: Legal User eXperience – JSON + TXT  
 Versión 1.0 | Fecha: 03 de agosto de 2025  
-Autor: Antonio León (Toño)  
+Autor: Antonio León   
 
   
 🧾 RESUMEN EJECUTIVO  
@@ -21,7 +21,7 @@ LUX-JT fue creado para reformular la interacción del usuario con la legalidad d
 
 - **Nombre del Sistema:** LUX-JT  
 - **Significado:** *Legal User eXperience – JSON + TXT*  
-- **Autor:** Antonio León (Toño)  
+- **Autor:** Antonio León 
 - **Fecha de creación:** Agosto 2025  
 - **Licencia original:** MIT con extensión de cláusulas éticas  
 - **Lenguaje base:** React + TailwindCSS  
