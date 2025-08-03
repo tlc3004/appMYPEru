@@ -92,7 +92,7 @@ export default function App() {
       </div>
 
       {/* 🎯 Íconos legales abajo como querías, sin footer */}
-      <div className="absolute bottom-[10px] right-[250px] translate-x-1 flex flex-row gap-4 z-10">
+      <div className="absolute bottom-[10px] right-[200px] translate-x-1 flex flex-row gap-4 z-10">
         <LegalBadgeHibrido clave="terminos" className="absolute flex flex-items items-center ml-2" />
         <LegalBadgeHibrido clave="politica" className="absolute flex flex-items items-center ml-2" />
         <LegalBadgeHibrido clave="manifiesto" className="absolute flex flex-items items-center ml-2" />
