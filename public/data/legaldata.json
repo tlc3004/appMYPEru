@@ -6,12 +6,12 @@
   },
   "terminos": {
     "titulo": "Términos de Servicio",
-    "icono": "📄",
+    "icono": "⚖️",
     "ruta": "/legales/terminos.txt"
   },
   "manifiesto": {
     "titulo": "Manifiesto Ético",
-    "icono": "⚖️",
+    "icono": "📄",
     "ruta": "/legales/manifiesto.txt"
   },
  "contacto": {
