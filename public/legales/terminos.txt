@@ -1,6 +1,6 @@
 📄 TÉRMINOS DEL SERVICIO  
 Versión 1.0 | Fecha: 03 de agosto de 2025  
-Autor: Antonio León (Toño)  
+Autor: Antonio León  
 
   
 🧾 RESUMEN EJECUTIVO  
@@ -65,9 +65,9 @@ Este documento está protegido bajo la Licencia MIT con adiciones éticas:
 📍 CONTACTO LEGAL  
   
 
-Creador: Antonio León (Toño)  
+Creador: Antonio León  
 GitHub: https://github.com/tlc3004  
 Ciudad: Lima, Perú  
-Correo: [tu-email@dominio.com]  
+Correo: [leonantoniobm@gmail.com]  
 
   
