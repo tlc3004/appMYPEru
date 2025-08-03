@@ -1,0 +1,43 @@
+Términos del Servicio
+
+📄 Documento Legal de Proyecto
+LUX-JT: Legal User eXperience – JSON + TXT
+🧾 Resumen Ejecutivo
+LUX-JT es un sistema de representación legal dinámico y modular, basado en la estructura JSON y contenido TXT. Fue creado por Antonio León para resolver un problema común en el diseño de software moderno:
+
+“La legalidad está escondida, fea o molesta… y eso debe cambiar.”
+
+LUX-JT propone un patrón ético, accesible y elegante para presentar documentos legales sin interrumpir al usuario, sin complicaciones técnicas, y con gran escalabilidad.
+
+📚 Definición del Proyecto
+Nombre del sistema: LUX-JT
+
+Significado: Legal User eXperience – JSON + TXT
+
+Creador: Antonio León (Toño)
+
+Fecha de creación: Agosto 2025
+
+Lenguaje base: React + TailwindCSS (versión actual)
+
+Formato modular: legaldata.json + archivos .txt externos
+
+🧱 Arquitectura Base
+Componente	Descripción
+legaldata.json	Índice semántico de documentos legales (título, icono, ruta o contenido)
+*.txt	Documentos legales independientes y versionables (GDPR, Términos, Cookies)
+LegalBadge	Componente React reutilizable que muestra íconos o botones legales flotantes
+TailwindCSS	Framework para estilizar los badges, modales y paneles de manera responsiva
+
+⚙️ Ventajas del Sistema
+✅ Documentación legal dinámica sin necesidad de PDFs
+
+✅ Permite múltiples idiomas, versiones y rutas
+
+✅ Compatible con SSR, SPAs y PWAs
+
+✅ UX fluida y elegante (no intrusiva)
+
+✅ Bajo acoplamiento (se puede portar a Vue, Svelte, etc.)
+
+✅ Puede actuar como identificador legal en apps públicas (badge flotante o fijo)

@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import ProductForm from './components/ProductForm'
 import Dashboard from './pages/Dashboard'
+<<<<<<< HEAD
 import GuideUse from './components/GuideUse' // ✅ nombre corregido aquí si se llama GuideUse.jsx
 import './styles/styles.css'
+=======
+import LegalBadgeHibrido from './assets/LegalBadgeHibrido'
+>>>>>>> 54f1661 (logre una innovacion)
 
 export default function App() {
   const [productos, setProductos] = useState([])
@@ -40,12 +44,47 @@ export default function App() {
     setProductos([...productos, nuevo])
   }
 
+<<<<<<< HEAD
   useEffect(() => {
   const guardadas = JSON.parse(localStorage.getItem('categorias')) || []
   setCategoriasGuardadas(guardadas)
 }, [])
+=======
+  return (
+    <div className="min-h-screen bg-[url('/img/Interacci%C3%B3n%20digital%20en%20la%20calle.png')] bg-cover bg-center py-4 px-2 md:px-10 overflow-hidden">
+      {!modoVenta ? (
+        <div className="max-w-3xl mx-auto bg-white/90 shadow-md rounded-lg p-6">
+          <header className="text-center mb-6 bg-white/70 p-4 rounded">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-red-700 tracking-tight">
+              APP-MYPEru
+            </h1>
+            <p className="text-gray-800 mt-2 text-lg">
+              Caja registradora para emprendedores peruanos
+            </p>
+          </header>
 
+          <h2 className="text-2xl font-semibold mb-4 text-indigo-800">Agregar productos</h2>
+          <ProductForm onAdd={agregarProducto} />
+>>>>>>> 54f1661 (logre una innovacion)
 
+          <div className="mt-6 flex justify-center">
+            <button
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md shadow"
+              onClick={() => setModoVenta(true)}
+            >
+              Iniciar venta
+            </button>
+          </div>
+        </div>
+      ) : (
+        <Dashboard
+          productos={productos}
+          onAgregar={() => setModoVenta(false)}
+          onClose={() => setModoVenta(false)}
+        />
+      )}
+
+<<<<<<< HEAD
   return (
       <div className="overflow-y-scroll max-h-[100vh] scroll-invisible">
     <div className="min-h-screen bg-[url('/img/Interacci%C3%B3n%20digital%20en%20la%20calle.png')] bg-cover bg-center py-4 md:px-1">
@@ -91,5 +130,19 @@ export default function App() {
       )}
     </div>
       </div>
+=======
+      {/* 🎯 Íconos legales abajo como querías, sin footer */}
+      <div className="absolute bottom-[10px] right-[250px] translate-x-1 flex flex-row gap-4 z-10">
+        <LegalBadgeHibrido clave="terminos" 
+        className="absolute flex flex-items items-center ml-2"/>
+        <LegalBadgeHibrido clave="politica" 
+        className="absolute flex flex-items items-center ml-2"/>
+        <LegalBadgeHibrido clave="manifiesto"
+        className="absolute flex flex-items items-center ml-2" />
+        <LegalBadgeHibrido clave="contacto"
+        className="absolute flex flex-items items-center ml-2" />
+      </div>
+    </div>
+>>>>>>> 54f1661 (logre una innovacion)
   )
 }

@@ -1,0 +1,23 @@
+{
+  "politica": {
+    "titulo": "Política de Privacidad",
+    "icono": "🛡️",
+    "ruta": "/legales/politica.txt"
+  },
+  "terminos": {
+    "titulo": "Términos de Servicio",
+    "icono": "📄",
+    "ruta": "/legales/terminos.txt"
+  },
+  "manifiesto": {
+    "titulo": "Manifiesto Ético",
+    "icono": "⚖️",
+    "ruta": "/legales/manifiesto.txt"
+  },
+ "contacto": {
+  "titulo": "Contáctanos por WhatsApp",
+  "icono": "💬",
+  "ruta": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+}
+
+}
