@@ -1,41 +1,81 @@
-📄 Documento Legal de Proyecto
-LUX-JT: Legal User eXperience – JSON + TXT
-🧾 Resumen Ejecutivo
-LUX-JT es un sistema de representación legal dinámico y modular, basado en la estructura JSON y contenido TXT. Fue creado por Antonio León para resolver un problema común en el diseño de software moderno:
+📄 DOCUMENTO LEGAL DE PROYECTO  
+LUX-JT: Legal User eXperience – JSON + TXT  
+Versión 1.0 | Fecha: 03 de agosto de 2025  
+Autor: Antonio León (Toño)  
 
-“La legalidad está escondida, fea o molesta… y eso debe cambiar.”
+  
+🧾 RESUMEN EJECUTIVO  
+  
 
-LUX-JT propone un patrón ético, accesible y elegante para presentar documentos legales sin interrumpir al usuario, sin complicaciones técnicas, y con gran escalabilidad.
+LUX-JT es una propuesta de arquitectura legal modular diseñada para aplicaciones web y móviles.  
+El sistema responde a una necesidad clara y actual:  
+**la documentación legal debe ser accesible, visible y no intrusiva**.
 
-📚 Definición del Proyecto
-Nombre del sistema: LUX-JT
+A través de una estructura basada en archivos `.json` y `.txt`, este modelo permite mostrar términos legales de forma clara, estética y adaptable, sin recurrir a documentos externos o PDFs inyectados.
 
-Significado: Legal User eXperience – JSON + TXT
+LUX-JT fue creado para reformular la interacción del usuario con la legalidad digital.
 
-Creador: Antonio León (Toño)
+  
+📚 DEFINICIÓN DEL PROYECTO  
+  
 
-Fecha de creación: Agosto 2025
+- **Nombre del Sistema:** LUX-JT  
+- **Significado:** *Legal User eXperience – JSON + TXT*  
+- **Autor:** Antonio León (Toño)  
+- **Fecha de creación:** Agosto 2025  
+- **Licencia original:** MIT con extensión de cláusulas éticas  
+- **Lenguaje base:** React + TailwindCSS  
+- **Formato:** Modular, desacoplado y portable  
 
-Lenguaje base: React + TailwindCSS (versión actual)
+  
+🧱 ARQUITECTURA BASE  
+  
 
-Formato modular: legaldata.json + archivos .txt externos
+| Elemento             | Descripción                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| `legaldata.json`     | Índice estructurado con metadatos legales (título, ícono, ruta o contenido)|
+| `*.txt`              | Archivos legales versionables (ej. política, cookies, términos, manifiesto)|
+| `LegalBadgeHibrido`  | Componente React dinámico, legal y contextual                              |
+| `TailwindCSS`        | Estilo limpio, adaptativo y sin frameworks externos                        |
 
-🧱 Arquitectura Base
-Componente	Descripción
-legaldata.json	Índice semántico de documentos legales (título, icono, ruta o contenido)
-*.txt	Documentos legales independientes y versionables (GDPR, Términos, Cookies)
-LegalBadge	Componente React reutilizable que muestra íconos o botones legales flotantes
-TailwindCSS	Framework para estilizar los badges, modales y paneles de manera responsiva
+  
+⚙️ VENTAJAS DEL SISTEMA  
+  
 
-⚙️ Ventajas del Sistema
-✅ Documentación legal dinámica sin necesidad de PDFs
+✅ Elimina la dependencia de PDFs legales  
+✅ Facilita internacionalización (i18n) de políticas  
+✅ Apto para SSR, SPA, PWA y apps híbridas  
+✅ Visualización no intrusiva (UX mejorada)  
+✅ Facilita la actualización dinámica de políticas  
+✅ Puede actuar como sello de identidad legal o ética  
 
-✅ Permite múltiples idiomas, versiones y rutas
+  
+📜 CONSIDERACIONES ÉTICAS  
+  
 
-✅ Compatible con SSR, SPAs y PWAs
+LUX-JT no busca ocultar, forzar o disfrazar términos legales.  
+Este sistema declara lo siguiente:
 
-✅ UX fluida y elegante (no intrusiva)
+> “Un usuario informado es un usuario respetado.”
 
-✅ Bajo acoplamiento (se puede portar a Vue, Svelte, etc.)
+Se promueve el acceso directo y honesto a políticas, permisos y derechos del usuario sin manipulaciones visuales ni técnicas.
 
-✅ Puede actuar como identificador legal en apps públicas (badge flotante o fijo)
+  
+📦 LICENCIA Y USO  
+  
+
+Este sistema puede ser usado, adaptado y redistribuido bajo la Licencia MIT con la siguiente cláusula adicional:
+
+> “Toda implementación de LUX-JT deberá preservar el espíritu de transparencia, accesibilidad y respeto a la experiencia del usuario.”
+
+  
+👁️‍🗨️ CONTACTO Y CREDENCIALES  
+  
+
+Creador: Antonio León  
+Correo: [leonantoniobm@gmail.com]  
+GitHub: https://github.com/tlc3004  
+Ciudad: Lima, Perú  
+Fecha: Agosto 2025  
+
+  

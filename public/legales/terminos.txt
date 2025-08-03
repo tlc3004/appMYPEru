@@ -1,43 +1,73 @@
-Términos del Servicio
+📄 TÉRMINOS DEL SERVICIO  
+Versión 1.0 | Fecha: 03 de agosto de 2025  
+Autor: Antonio León (Toño)  
 
-📄 Documento Legal de Proyecto
-LUX-JT: Legal User eXperience – JSON + TXT
-🧾 Resumen Ejecutivo
-LUX-JT es un sistema de representación legal dinámico y modular, basado en la estructura JSON y contenido TXT. Fue creado por Antonio León para resolver un problema común en el diseño de software moderno:
+  
+🧾 RESUMEN EJECUTIVO  
+  
 
-“La legalidad está escondida, fea o molesta… y eso debe cambiar.”
+LUX-JT redefine el modo en que los Términos del Servicio son comunicados a los usuarios.  
+Este documento no pretende ocultar cláusulas entre jerga legal, sino brindar **claridad, transparencia y respeto** al usuario que interactúa con sistemas desarrollados bajo este patrón.
 
-LUX-JT propone un patrón ético, accesible y elegante para presentar documentos legales sin interrumpir al usuario, sin complicaciones técnicas, y con gran escalabilidad.
+Este archivo forma parte del sistema **Legal User eXperience – JSON + TXT**, que encapsula la legalidad digital en estructuras modulares, accesibles y escalables.
 
-📚 Definición del Proyecto
-Nombre del sistema: LUX-JT
+  
+📚 DEFINICIÓN DEL SISTEMA  
+  
 
-Significado: Legal User eXperience – JSON + TXT
+- **Nombre del Sistema:** LUX-JT  
+- **Significado:** Legal User eXperience – JSON + TXT  
+- **Autor:** Antonio León  
+- **Tipo de Documento:** Términos del Servicio  
+- **Formato:** `.txt` independiente, vinculado por `legaldata.json`  
+- **Propósito:** Establecer condiciones claras de uso en entornos digitales  
 
-Creador: Antonio León (Toño)
+  
+📌 CONDICIONES GENERALES  
+  
 
-Fecha de creación: Agosto 2025
+1. **Aceptación del Usuario**  
+   Al utilizar esta aplicación, el usuario acepta los términos aquí descritos. Si no está de acuerdo, deberá abstenerse de continuar su uso.
 
-Lenguaje base: React + TailwindCSS (versión actual)
+2. **Uso Permitido**  
+   Esta plataforma está destinada a usuarios individuales o empresas que buscan gestionar sus productos de forma digital. Cualquier uso fraudulento, abusivo o no autorizado será motivo de suspensión.
 
-Formato modular: legaldata.json + archivos .txt externos
+3. **Actualizaciones y Cambios**  
+   Los presentes términos pueden ser modificados en cualquier momento. Las actualizaciones se reflejarán en este documento con su respectiva fecha.
 
-🧱 Arquitectura Base
-Componente	Descripción
-legaldata.json	Índice semántico de documentos legales (título, icono, ruta o contenido)
-*.txt	Documentos legales independientes y versionables (GDPR, Términos, Cookies)
-LegalBadge	Componente React reutilizable que muestra íconos o botones legales flotantes
-TailwindCSS	Framework para estilizar los badges, modales y paneles de manera responsiva
+4. **Privacidad y Datos**  
+   Esta aplicación no recolecta datos sensibles sin consentimiento explícito. Para más información, consulte la Política de Privacidad.
 
-⚙️ Ventajas del Sistema
-✅ Documentación legal dinámica sin necesidad de PDFs
+5. **Propiedad Intelectual**  
+   Todos los contenidos, diseños y códigos del sistema LUX-JT son propiedad del autor o de sus respectivos titulares, salvo indicación contraria.
 
-✅ Permite múltiples idiomas, versiones y rutas
+6. **Limitación de Responsabilidad**  
+   El uso de esta aplicación se hace bajo responsabilidad del usuario. No se garantiza disponibilidad permanente ni la ausencia de errores.
 
-✅ Compatible con SSR, SPAs y PWAs
+7. **Soporte y Contacto**  
+   Para consultas legales, técnicas o soporte general, contactar al autor mediante los canales oficiales.
 
-✅ UX fluida y elegante (no intrusiva)
+  
+⚙️ FUNCIONAMIENTO LÓGICO Y ÉTICO  
+  
 
-✅ Bajo acoplamiento (se puede portar a Vue, Svelte, etc.)
+Este sistema se rige por los principios de claridad legal, accesibilidad universal, y respeto al tiempo del usuario.  
+Cada término y cada icono están diseñados para informar, no confundir.
 
-✅ Puede actuar como identificador legal en apps públicas (badge flotante o fijo)
+  
+📦 LICENCIA Y DISTRIBUCIÓN  
+  
+
+Este documento está protegido bajo la Licencia MIT con adiciones éticas:  
+> “Toda implementación de este sistema debe conservar la transparencia y el respeto hacia los derechos del usuario final.”
+
+  
+📍 CONTACTO LEGAL  
+  
+
+Creador: Antonio León (Toño)  
+GitHub: https://github.com/tlc3004  
+Ciudad: Lima, Perú  
+Correo: [tu-email@dominio.com]  
+
+  
