@@ -52,10 +52,6 @@ button {
   scrollbar-width: none;     /* Firefox */
 }
 
-.iconos{
-  z-index: 10;
-}
-
 
 /* ====== 📱 MEDIA QUERIES ====== */
 
@@ -66,7 +62,7 @@ button {
   }
 
   .producto-boton {
-    width: 48%;
+    width: 45%;
   }
 
    .iconos{
@@ -83,7 +79,7 @@ button {
   }
 
   .producto-boton {
-    width: 32%;
+    width: 30%;
   }
   
  .iconos{
@@ -117,7 +113,7 @@ button {
 /* 🖥️ xl: desde 1280px */
 @media (min-width: 1280px) {
   .producto-boton {
-    width: 20%;
+    width: 10%;
   }
 }
 
