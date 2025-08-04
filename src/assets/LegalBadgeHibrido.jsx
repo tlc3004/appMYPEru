@@ -41,7 +41,7 @@ export default function LegalBadgeHibrido({ clave, fuente = "/data/legaldata.jso
       </button>
 
       {visible && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-80 bg-white border border-gray-300 shadow-lg rounded p-4 text-sm z-50">
+        <div className="absolute bottom-8 right-1/2 translate-x w-80 bg-white border border-gray-300 shadow-lg rounded p-4 text-sm z-50">
           <h4 className="font-bold mb-2">{datos.titulo}</h4>
 
           {/* 👇 Solo esta parte se adapta según la clave */}
@@ -61,11 +61,11 @@ export default function LegalBadgeHibrido({ clave, fuente = "/data/legaldata.jso
               </button>
             </div>
           ) : (
-            <pre className="max-h-64 overflow-auto whitespace-pre-wrap">{datos.contenido}</pre>
+            <pre className="max-h-64 overflow-auto whitespace-pre-wrap right-8">{datos.contenido}</pre>
           )}
 
           <button
-            className="mt-2 text-xs text-blue-500 hover:underline"
+            className="mt-2 text-xs text-blue-500 hover:underline  rounded"
             onClick={() => setVisible(false)}
           >
             Cerrar

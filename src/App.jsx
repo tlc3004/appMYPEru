@@ -76,19 +76,19 @@ export default function App() {
 
             <div className="mt-6 flex justify-between">
               <button
-                className="bg-gray-700 hover:bg-gray-900 text-white font-semibold px-3 py-2 rounded shadow"
+                className="bg-gray-700 hover:bg-gray-900 text-white font-semibold px-6 py-2 rounded shadow"
                 onClick={() => setMostrarGuia(true)}
               >
                 Modo de Uso 👈
               </button>
               <button
-                className="bg-green-600 hover:bg-green-800 text-white font-semibold px-3 py-3 rounded-md shadow ml-6"
+                className="bg-green-600 hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-md shadow ml-6"
                 onClick={() => setModoVenta(true)}
               >
                 Ir a Mi Tienda
               </button>
             {/* 🎯 Íconos legales abajo como querías, sin footer */}
-            <div className="iconos bottom-[10px] translate-x-1 flex flex-row gap-4 z-10">
+            <div className="iconos  translate-x-2 flex flex-row gap-4 z-10">
               <LegalBadgeHibrido clave="terminos" className={() => setIconos()} />
               <LegalBadgeHibrido clave="politica" className={() => setIconos(true)} />
             </div>
