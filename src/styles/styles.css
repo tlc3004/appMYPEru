@@ -52,7 +52,9 @@ button {
   scrollbar-width: none;     /* Firefox */
 }
 
-
+.iconos{
+  margin-left: 35%;
+}
 
 
 /* ====== 📱 MEDIA QUERIES ====== */

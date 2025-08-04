@@ -11,6 +11,7 @@ export default function App() {
   const [mostrarGuia, setMostrarGuia] = useState(false)
   const [categoriasBase, setCategoriasBase] = useState([])
   const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
+  const[ setIconos]=useState(true)
 
   // Cargar productos guardados
   useEffect(() => {
@@ -75,29 +76,27 @@ export default function App() {
 
             <div className="mt-6 flex justify-between">
               <button
-                className="bg-gray-700 hover:bg-gray-900 text-white font-semibold px-4 py-2 rounded shadow"
+                className="bg-gray-700 hover:bg-gray-900 text-white font-semibold px-3 py-2 rounded shadow"
                 onClick={() => setMostrarGuia(true)}
               >
                 Modo de Uso 👈
               </button>
               <button
-                className="bg-green-600 hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-md shadow"
+                className="bg-green-600 hover:bg-green-800 text-white font-semibold px-3 py-3 rounded-md shadow ml-6"
                 onClick={() => setModoVenta(true)}
               >
                 Ir a Mi Tienda
               </button>
+            {/* 🎯 Íconos legales abajo como querías, sin footer */}
+            <div className="iconos bottom-[10px] translate-x-1 flex flex-row gap-4 z-10">
+              <LegalBadgeHibrido clave="terminos" className={() => setIconos()} />
+              <LegalBadgeHibrido clave="politica" className={() => setIconos(true)} />
+            </div>
+            </div>
+                  </div>  
+                )
+              }
             </div>
           </div>
-        )}
-
-      {/* 🎯 Íconos legales abajo como querías, sin footer */}
-      <div className="bottom-[10px] translate-x-1 flex flex-row gap-4 z-10">
-        <LegalBadgeHibrido clave="contacto" className="flex flex-items items-center ml-2" />
-        <LegalBadgeHibrido clave="manifiesto" className="flex flex-items items-center ml-2" />
-        <LegalBadgeHibrido clave="terminos" className="flex flex-items items-center ml-2" />
-        <LegalBadgeHibrido clave="politica" className="flex flex-items items-center ml-2" />
-      </div>
-      </div>
-    </div>
-  )
-}
+        )
+      }
