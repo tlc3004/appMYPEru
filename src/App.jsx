@@ -52,14 +52,14 @@ export default function App() {
   return (
     <div className="overflow-y-scroll max-h-[100vh] scroll-invisible">
       <div className="min-h-screen bg-[url('/img/Interacci%C3%B3n%20digital%20en%20la%20calle.png')] bg-cover bg-center py-4 md:px-1">
-   <div className="fixed top-10 left-2 flex flex-col gap-4 z-50">
+   <div className="flex flex-row flex-wrap justify-center items-center gap-10 mt-6 w-full">
   {apps.map((app, index) => (
     <a key={index} href={app.url}>
       <img
         src={app.logo}
         alt={app.nombre}
         title={app.nombre}
-        className="relative mb-20 left-5 w-10 h-10 gap-10 hover:scale-110 transition-transform cursor-pointer"
+        className="relative mb-20 w-10 h-10 gap-10 hover:scale-110 transition-transform cursor-pointer"
       />
     </a>
   ))}
