@@ -3,7 +3,7 @@ import ProductForm from './components/ProductForm'
 import Dashboard from './pages/Dashboard'
 import GuideUse from './components/GuideUse'
 import './styles/styles.css'
-import LegalBadgeHibrido from './assets/LegalBadgeHibrido'
+import LegalBadgeHibrido from './custom/LegalBadgeHibrido'
 
 export default function App() {
   const [productos, setProductos] = useState([])
