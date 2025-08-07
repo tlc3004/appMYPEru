@@ -28,7 +28,7 @@
 
 import { useEffect, useState } from "react";
 
-export function useAppData(fuente = "/data/apps.json") {
+export default function useAppData(fuente = "/data/apps.json") {
   const [apps, setApps] = useState([]);
 
   useEffect(() => {

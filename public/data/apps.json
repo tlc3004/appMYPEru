@@ -1,27 +1,22 @@
 [
   {
     "nombre": "Tumaki App",
-    "logo": "/sushi.ico",
+    "logo": "/image/sushi.ico",
     "url": "https://tumaki-web-site.vercel.app"
   },
   {
     "nombre": "Motorcycle App",
-    "logo": "/logo.ico",
+    "logo": "/image/logo.ico",
     "url": "https://motorcycleapp.vercel.app"
   },
   {
     "nombre": "Confiture 3D",
-    "logo": "/shoes.png",
+    "logo": "/image/shoes.png",
     "url": "https://tienda-3d-gold.vercel.app"
   },
   {
-    "nombre": "App MYPEru",
-    "logo": "/solutions.png",
-    "url": "https://app-MYPEru.vercel.app"
-  },
-  {
     "nombre": "Tumaki webSite",
-    "logo": "/logo193.png",
+    "logo": "/image/logo193.png",
     "url": "https://tumaki-web-site.vercel.app"
   }
 ]

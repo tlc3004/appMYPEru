@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard'
 import GuideUse from './components/GuideUse'
 import './styles/styles.css'
 import LegalBadgeHibrido from './custom/LegalBadgeHibrido'
+import useAppData from './custom/useAppData'
 
 export default function App() {
   const [productos, setProductos] = useState([])
@@ -11,7 +12,8 @@ export default function App() {
   const [mostrarGuia, setMostrarGuia] = useState(false)
   const [categoriasBase, setCategoriasBase] = useState([])
   const [categoriasGuardadas, setCategoriasGuardadas] = useState([])
-  const[ setIconos]=useState(true)
+  const [ iconos, setIconos]=useState(true)
+  const apps=useAppData('/data/apps.json')
 
   // Cargar productos guardados
   useEffect(() => {
@@ -50,6 +52,22 @@ export default function App() {
   return (
     <div className="overflow-y-scroll max-h-[100vh] scroll-invisible">
       <div className="min-h-screen bg-[url('/img/Interacci%C3%B3n%20digital%20en%20la%20calle.png')] bg-cover bg-center py-4 md:px-1">
+   <div className="fixed top-10 left-2 flex flex-col gap-4 z-10">
+  {apps.map((app, index) => (
+    <a key={index} href={app.url}>
+      <img
+        src={app.logo}
+        alt={app.nombre}
+        title={app.nombre}
+        className="relative mb-20 left-5 w-10 h-10 gap-10 hover:scale-110 transition-transform cursor-pointer"
+      />
+    </a>
+  ))}
+</div>
+
+
+
+
         {modoVenta ? (
           <Dashboard
             productos={productos}
@@ -88,6 +106,12 @@ export default function App() {
                 Ir a Mi Tienda
               </button>
             {/* 🎯 Íconos legales abajo como querías, sin footer */}
+                        <div className="mt-4 flex gap-4 justify-center">
+              <LegalBadgeHibrido clave="terminos" className={() => setIconos()} />
+              <LegalBadgeHibrido clave="politica" className={() => setIconos(true)} />
+            </div>
+
+ 
             <div className="iconos  translate-x-2 flex flex-row gap-4 z-10">
               <LegalBadgeHibrido clave="terminos" className={() => setIconos()} />
               <LegalBadgeHibrido clave="politica" className={() => setIconos(true)} />

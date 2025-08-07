@@ -56,6 +56,23 @@ button {
     z-index: 1;
   }
 
+.legal-modal {
+  animation: slideInLeft 0.3s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
 /* ====== 📱 MEDIA QUERIES ====== */
 
 /* 📱 sm: desde 640px */
